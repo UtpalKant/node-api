@@ -1,6 +1,10 @@
 const { getUsers, setUsers } = require('./user.service');
 
 module.exports = {
+
+    /**
+     * @description: fetches all users.
+     */
     async getUsers(req, res, next){
         try{
             let users = await getUsers();
@@ -10,6 +14,9 @@ module.exports = {
         }
     },
 
+    /**
+     * @description: sets up a user.
+     */
     async setUsers(req, res, next){
         try{
             let users = await setUsers();
