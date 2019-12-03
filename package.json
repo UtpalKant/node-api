@@ -1,0 +1,21 @@
+{
+  "name": "node-app",
+  "version": "1.0.0",
+  "description": "node with mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UtpalKant/node-api"
+  },
+  "author": "utpal k mehta",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13"
+  }
+}
