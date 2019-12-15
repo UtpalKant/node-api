@@ -5,6 +5,6 @@ const { getUsers, setUsers, testapi } = require('../src/login.module/login.contr
 
 routes.get('/login', getUsers);
 routes.post('/register', setUsers)
-routes.use('/check', testapi)
+routes.get('/check', testapi)
 
 module.exports = routes;
