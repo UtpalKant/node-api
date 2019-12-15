@@ -16,7 +16,7 @@ app.use(cookieParser());
 // custom imports.
 const router = require('./routes/router');
 require('dotenv').config();
-const config = require('./config')[process.env.NODE_ENV || 'dev'];
+const config = require('./config')[process.env.NODE_ENV];
 
 // setting mongoose orm
 mongoose.connect(config.mongodbClusterUrl, {
