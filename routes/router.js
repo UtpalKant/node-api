@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const userRouter = require('./user.route');
+const loginRouter = require('./login.route');
+const {enableCors} = require('../middlewares/cors.middleware');
 
-router.use('/user', userRouter);
+router.use('/', enableCors);
 router.use('/', loginRouter);
 
 module.exports = router;

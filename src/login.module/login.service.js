@@ -1,11 +1,11 @@
 const { getUsers, setUsers } = require('./login.repository');
 
 module.exports = {
-    getUsers(){
-        return getUsers();
+    getUsers(username, password){
+        return getUsers(username, password);
     },
 
-    setUsers(email, userName, password){
-        return setUsers();
+    setUsers(email, username, password){
+        return setUsers(email, username, password);
     }
 }
