@@ -1,11 +1,12 @@
 // library iimports.
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const app = express();
+
+// using mongoose.
 const mongoose = require('mongoose');
 
-// using body parser
+// using body parser.
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // custom imports.

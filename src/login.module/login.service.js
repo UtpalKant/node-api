@@ -1,5 +1,5 @@
 const { getUsers, setUsers,  } = require('./login.repository');
-const {setToken } = require('../token.module/token.service');
+const {setToken, getTokenByUser } = require('../token.module/token.service');
 
 module.exports = {
     async getUsers(username, password){
@@ -14,10 +14,12 @@ module.exports = {
             throw new Error("your details not present in our db");
         }
         // return token object.
-        return setToken(user[0]);
+        return getTokenByUser(user[0]);
+        
     },
 
-    setUsers(user){
-        return setUsers(user);
+    async setUsers(userData){
+        let user = await setUsers(userData);
+        return setToken(user);
     }
 }

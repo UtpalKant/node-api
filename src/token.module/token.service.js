@@ -1,5 +1,5 @@
 const guid = require('uuid/v1');
-const { setToken, getToken, updateToken } = require('./token.repository');
+const { setToken, getTokenByUser, getTokenByToken, updateToken } = require('./token.repository');
 
 module.exports = {
 
@@ -15,8 +15,12 @@ module.exports = {
         return setToken(tokenData);
     },
 
-    getToken(token){
-        return getToken(token);
+    getTokenByToken(token){
+        return getTokenByToken(token);
+    },
+
+    getTokenByUser(user){
+        return getTokenByUser(user);
     },
 
     updateToken(token, updatedToken){

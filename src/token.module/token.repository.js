@@ -2,8 +2,12 @@ const Token = require('../../orm-models/token.entity');
 
 module.exports = {
 
-    getToken(token) {
+    getTokenByToken(token) {
         return Token.find({ 'auth_token': token });
+    },
+
+    getTokenByUser({username, email}){
+        return Token.find({username: username, email: email});
     },
 
     setToken(token) {
