@@ -28,9 +28,8 @@ mongoose.connect(config.mongodbClusterUrl, {
     app.use(router);
     
     // server listening.
-    let port = process.env.PORT || 80
-    app.listen(port, ()=>{
-        console.log(`node started at ${port}`);
+    app.listen(process.env.PORT, ()=>{
+        console.log(`node started at ${process.env.PORT}`);
     });
 })
 .catch(err=>{
