@@ -7,8 +7,8 @@ module.exports = {
      */
     async getUsers(req, res, next){
         try{
-            let users = await getUsers(req.query.username, req.query.password);
-            res.status(200).send(users);
+            let token = await getUsers(req.query.username, req.query.password);
+            res.status(200).send(token);
         } catch(err){
             res.status(500).send('Internal Server error: '+err);
         }
@@ -20,7 +20,7 @@ module.exports = {
     async setUsers(req, res, next){
         try{
             console.log(req.body);
-            let users = await setUsers(req.body.email, req.body.username, req.body.password);
+            let users = await setUsers(req.body);
             res.status(200).send(users);
         } catch(err){
             res.status(500).send('Internal Server error: '+err);

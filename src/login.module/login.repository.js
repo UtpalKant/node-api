@@ -2,16 +2,18 @@ const mongoose = require('mongoose');
 const User = require('../../orm-models/user.entity');
 
 module.exports = {
-    getUsers(username, password){
-        return User.find({username: username, password: password});
+    getUsers(user){
+        return User.find(user);
     },
 
-    setUsers(email, username, password){
+    setUsers(userData){
         let user = new User({
             id: new mongoose.Types.ObjectId(),
-            username: username,
-            email: email,
-            password: password
+            username: userData.username,
+            email: userData.email,
+            password: userData.password,
+            firstname: userData.firstname,
+            lastname: userData.lastname
         });
         return user.save();
     }
