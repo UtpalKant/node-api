@@ -9,7 +9,7 @@ module.exports = {
         try {
             let token = await getUsers(req.query.username, req.query.password);
             res.cookie('name', 'express',
-                { domain: '.herokuapp.com', path: '/' },
+                { domain: 'herokuapp.com', path: '/' },
                 { expire: 400000 + Date.now() }).status(200).send(...token);
         } catch (err) {
             res.status(500).send('Internal Server error: ' + err);
